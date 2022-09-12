@@ -279,7 +279,29 @@ main {
     }
 
 }
+/*-------------------------------------------------gallery*/
+
+.gallery {
+
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery_container {
+    width: 280px;
+    height: 280px;
+    padding: 0;
+    margin: 0;
+}
+.gallery_container img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+}
 /*-------------------------------------------------features*/
+
 .features {
     box-sizing: border-box;
     position: relative;
@@ -290,30 +312,41 @@ main {
     flex-direction: column;
     justify-content: center;
 }
-.featureInfo {
+.feature_row {
+    display: flex;
+    margin: 2%;
+}
+.feature_row_reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.feature_container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-
+    padding: 0;
+    margin: 0;
 }
-.feature_row {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.feature_image_1 img {
+    width: 300px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
 }
-.feature_col-1 {
-    flex-basis: 50%;
+.feature_image_2 img {
+    width: 300px;
+    height: 168px;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
 }
-.feature_col-2 {
-    flex-basis: 50%;
-}
-.feature_image {
-    width: 80%;
-}
-#photo_size {
-    width: 100px;
-    height: 178px;
+.feature_image_3 img {
+    width: 169px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    object-fit: cover;
 }
 .feature_base {
     display: flex;
@@ -329,16 +362,28 @@ main {
     font-size: 1rem;
 }
 .base {
-    width: 100%;
+    width: 80%;
     padding: 2% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-@media only screen and (max-width:675px) {
+@media only screen and (max-width:700px) {
+
+    .base {
+        width: 100%;
+    }
     .feature_row {
+        display: flex;
         flex-direction: column;
     }
+    .feature_row_reverse {
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
-
 /*----------------------------------------------Testimonials*/
 .testimonials {
     position: relative;
@@ -439,16 +484,10 @@ main {
     align-items: center;
     flex-direction: column;
 }
-.contact_title {
-    text-align: center;
-}
 .contact_title h2 {
     font-size: 36px;
+    margin-bottom: 0;
     font-weight: 500;
-    color: #000080;
-}
-.contact_title p {
-    font-weight: 300;
     color: #000080;
 }
 .contact_container {
@@ -456,9 +495,8 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
 }
-.contactInfo {
+.contact_info {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -490,25 +528,27 @@ main {
     font-weight: 500;
     color: #000080;
 }
-.contactForm {
+form {
     width: 40%;
     padding: 40px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
-.contactForm h2 {
+form h2 {
+    margin-bottom: 0;
     font-size: 30px;
     color: #000080;
     font-weight: 500;
     text-align: center;
 }
-.inputBox {
+.input_box {
     position: relative;
     width: 100%;
     margin-top: 10px;
     align-items: center;
 }
-.inputBox input,
-.inputBox textarea {
+.input_box input,
+.input_box textarea {
     width: 100%;
     padding: 5px 0;
     font-size: 16px;
@@ -518,7 +558,7 @@ main {
     outline: none;
     resize: none;
 }
-.inputBox span {
+.input_box span {
     position: absolute;
     left: 0;
     padding: 5px 0;
@@ -528,16 +568,16 @@ main {
     transition: 0.5s;
     color: #000080;
 }
-.inputBox input:focus ~ span, 
-.inputBox input:valid ~ span, 
-.inputBox textarea:focus ~ span, 
-.inputBox textarea:valid ~ span {
+.input_box input:focus ~ span, 
+.input_box input:valid ~ span, 
+.input_box textarea:focus ~ span, 
+.input_box textarea:valid ~ span {
 
     color: #e91e63;
     font-size: 12px;
     transform: translateY(-20px);
 }
-.inputBox input[type="submit"] {
+.input_box input[type="submit"] {
     width: 100px;
     background: linear-gradient(to right, #0ABAB5, #000080);
     color: #fff;
@@ -547,6 +587,11 @@ main {
     font-size: 1rem;
     border-radius: 6px;
 }
+
+.submit {
+    display: flex;
+    justify-content: center;
+}
 /*contact media queries*/
 @media (max-width: 1000px) {
     
@@ -554,12 +599,12 @@ main {
         flex-direction: column;
         margin-bottom: 20px;
     }
-    .contactForm {
+    form {
         width: 65%;
         padding: 0;
         
     }
-    .contactInfo {
+    .contact_info {
         margin-bottom: 40px;
         width: 100%;
     }
@@ -577,7 +622,7 @@ main {
 }
 
 @media (max-width: 450px) {
-    .contactForm {
+    form {
         width: 80%;
     }
 }
