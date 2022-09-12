@@ -139,7 +139,7 @@ main {
 }
 
 /*--------------------landing media queries*/
-@media only screen and (max-width:675px) {
+@media only screen and (max-width:800px) {
 
     /*media navigation*/
     
@@ -389,7 +389,6 @@ main {
     position: relative;
     padding-top: 5%;
     width: 100%;
-    min-height: 100vh;
 }
 .testimonials_container {
     display: flex;
@@ -476,7 +475,6 @@ main {
 
 /*---------------------------------------------contact*/
 .contact {
-    min-height: 100vh;
     position: relative;
     padding: 2%;
     display: flex;
